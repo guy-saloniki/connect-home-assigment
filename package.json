@@ -1,0 +1,19 @@
+{
+  "name": "connect-home-assigment",
+  "version": "1.0.0",
+  "description": "home-assigment",
+  "main": "script.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Guy Saloniki",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "node-sass": "^9.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "jsonfile": "^6.1.0"
+  }
+}

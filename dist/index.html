@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Connect Home Assigment</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="container">
+      <header class="header-container">
+        <nav class="main-nav">
+          <ul>
+            <li class="notification-btn">
+              <span class="notification-span">1</span>
+              <i class="fas fa-bell"></i>
+              <div>התראות</div>
+            </li>
+            <li>
+              <i class="fas fa-headphones"></i>
+              <div>תמיכה</div>
+            </li>
+            <li>
+              <i class="fas fa-magnifying-glass"></i>
+              <div>חיפוש</div>
+            </li>
+            <li>
+              <span class="for-your-attention-span">2</span>
+              <i class="fas fa-calendar-days"></i>
+              <div>לטיפולך</div>
+            </li>
+          </ul>
+          <div class="open-account">
+            <h3>חשבון פתוח</h3>
+            <i class="fas fa-keyboard"></i>
+          </div>
+          <h2 class="logo">לוגו</h2>
+        </nav>
+      </header>
+
+      <!-- sidebar -->
+      <div class="side-nav">
+        <ul class="top">
+          <li>
+            <i class="fa-solid fa-house"></i>
+            <div>ראשי</div>
+          </li>
+          <li>
+            <i class="fa-solid fa-calendar"></i>
+            <div>יומן</div>
+          </li>
+          <li>
+            <span>2</span>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div>קופה</div>
+          </li>
+          <li>
+            <i class="fa-solid fa-person"></i>
+            <div>לקוחות</div>
+          </li>
+        </ul>
+
+        <ul class="bottom">
+          <li>
+            <i class="fa-solid fa-landmark"></i>
+            <div>שירותים ופריטים</div>
+          </li>
+          <li>
+            <i class="fa-solid fa-signal"></i>
+            <div>דוחות</div>
+          </li>
+          <li>
+            <i class="fa-solid fa-gear"></i>
+            <div>הגדרות</div>
+          </li>
+          <li>
+            <div class="account-logo">לוגו</div>
+            <div>החשבון שלי</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Add alert button -->
+      <div class="add-alert-icon">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal-container">
+        <div class="modal">
+          <button class="close-btn">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="modal-header">
+            <h3>הוספת התראה חדשה</h3>
+          </div>
+          <div class="modal-content">
+            <form class="modal-form">
+              <div>
+                <label for="title">כותרת התראה</label>
+                <input
+                  type="text"
+                  id="alert-title"
+                  class="alert-title"
+                  dir="rtl"
+                />
+              </div>
+              <div>
+                <label for="content" cla>מלל התראה</label>
+                <textarea class="alert-content" dir="rtl"></textarea>
+                <div class="word-count-div"><span>0</span>/100</div>
+              </div>
+
+              <input type="submit" value="שמירה" class="save-alert-btn" />
+            </form>
+          </div>
+
+          <!-- Success -->
+          <div class="success">
+            <i class="fa-regular fa-circle-check"></i>
+            <div class="success-content">
+              <h3>!הפעולה בוצעה בהצלחה</h3>
+              <p>!ההתראה נוספה בהצלחה</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile -->
+      <div class="mobile-nav">
+        <div class="notification-btn-mobile">
+          <span class="notification-span-mobile"></span>
+          <i class="fas fa-bell"></i>
+        </div>
+        <div>
+          <i class="fa-solid fa-house"></i>
+        </div>
+        <div>
+          <i class="fa-solid fa-calendar"></i>
+        </div>
+        <div>
+          <i class="fas fa-keyboard"></i>
+        </div>
+        <div class="hamburger-div">
+          <i class="fas fa-bars"></i>
+          <span class="hamburger-span"></span>
+        </div>
+      </div>
+
+      <div class="for-your-attention">
+        <span>2</span>
+        <i class="fas fa-calendar-days"></i>
+        <div>לטיפולך</div>
+      </div>
+    </div>
+
+    <!-- Notifications container -->
+    <div class="notifications-container">
+      <div class="notifications">
+        <!-- Notifications header -->
+        <div class="notifications-header">
+          <button class="notifications-close-btn">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="title">
+            <h3>התראות</h3>
+            <i class="fas fa-bell"></i>
+          </div>
+        </div>
+
+        <!-- notification tabs -->
+        <div class="notification-tabs">
+          <div class="all-notifications-tab">
+            <h3>כל ההתראות</h3>
+          </div>
+          <div class="unread-notifications-tab current">
+            <h3>שלא נקראו</h3>
+          </div>
+        </div>
+
+        <!-- Notification items -->
+        <div class="notification-items-container"></div>
+
+        <!-- Mark all as read -->
+        <div class="mark-all-read-container">
+          <div class="load-more">
+            <p>טען עוד</p>
+          </div>
+          <button class="mark-all-read-btn">סמן הכל כנקרא</button>
+        </div>
+
+        <div class="no-more-notifications-container">
+          <i class="fas fa-bell"></i>
+          <div class="no-more-notifications-content">
+            <h3>לא נמצאו התראות</h3>
+            <p>אין התראות חדשות במערכת</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gray-area"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
