@@ -44,6 +44,7 @@ const addNotification = (e) => {
 
   const title = document.querySelector('.alert-title').value;
   const content = document.querySelector('.textarea').value;
+  letterCountSpan.innerText = '0';
 
   if (title === '' || content === '') {
     alert('חובה למלא כותרת ותוכן התראה');

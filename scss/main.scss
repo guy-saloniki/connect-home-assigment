@@ -285,7 +285,7 @@ ul {
 
         .modal-form {
           div {
-            margin: 15px;
+            margin: 15px 10px 0 0;
           }
 
           label {
@@ -473,6 +473,7 @@ ul {
     .notification-items-container {
       width: 100%;
       overflow-y: auto;
+      margin: auto;
 
       .notification-item {
         width: 343px;
@@ -482,7 +483,7 @@ ul {
         color: #333;
         box-shadow: 0px 6px 10px #00000029;
         border-radius: 12px;
-        margin: 15px;
+        margin: 15px auto;
         display: none;
         flex-direction: column;
         align-items: center;

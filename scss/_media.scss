@@ -61,7 +61,7 @@
 
     .add-alert-icon {
       position: absolute;
-      top: 640px;
+      bottom: 100px;
       left: 22px;
       width: 60px;
       height: 60px;
@@ -76,7 +76,7 @@
       align-items: center;
       justify-content: center;
       position: absolute;
-      top: 560px;
+      bottom: 180px;
       left: 22px;
       width: 60px;
       height: 60px;
@@ -129,6 +129,10 @@
 
             .letter-count-div {
               top: 155px;
+            }
+
+            .save-alert-btn {
+              bottom: 35px;
             }
           }
         }
