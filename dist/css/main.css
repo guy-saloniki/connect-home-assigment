@@ -450,7 +450,8 @@ ul {
 @media (max-width: 375px) {
   .container {
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    overflow: auto; }
     .container .header-container,
     .container .side-nav {
       display: none; }
