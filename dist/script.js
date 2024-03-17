@@ -124,7 +124,7 @@ const loadUnreadNotifications = () => {
   });
 };
 
-// Load all notifications tab
+// Load read notifications tab
 const loadReadNotifications = () => {
   unreadNotificationsTab.classList.remove('current');
   allNotificationsTab.classList.add('current');
@@ -333,7 +333,7 @@ const addNotificationsToLocalStorage = async () => {
 
   if (!existingNotifications) {
     // Load json data
-    const res = await fetch('../notifications.json');
+    const res = await fetch('./notifications.json');
     const { data } = await res.json();
 
     // Save notifications in local storage
@@ -361,6 +361,7 @@ const showNumOfNotifications = () => {
 
   if (unReadNotifications.length > 0) {
     notificationSpan.style.display = 'flex';
+    notificationSpanMobile.style.display = 'flex';
     notificationSpan.innerText = unReadNotifications.length;
   } else {
     notificationSpan.style.display = 'none';

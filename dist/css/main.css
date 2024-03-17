@@ -479,7 +479,7 @@ ul {
           background: #fc1349 0% 0% no-repeat padding-box;
           border: 2px solid #ffffff;
           border-radius: 5px;
-          display: flex;
+          display: none;
           justify-content: center;
           align-items: center;
           color: #fff;
