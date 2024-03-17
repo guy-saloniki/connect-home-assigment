@@ -285,7 +285,7 @@ ul {
 
         .modal-form {
           div {
-            margin: 15px 10px 0 0;
+            margin: 15px 6px 0 0;
           }
 
           label {
@@ -629,6 +629,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: auto;
 
     .mark-all-read-btn {
       border: none;
@@ -638,7 +639,7 @@ ul {
       padding: 15px 125px;
       font-weight: bold;
       font-size: 16px;
-      margin-left: 12px;
+      margin: auto;
       cursor: pointer;
     }
 
