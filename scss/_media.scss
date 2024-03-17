@@ -127,7 +127,7 @@
               height: 22px;
             }
 
-            .word-count-div {
+            .letter-count-div {
               top: 155px;
             }
           }
@@ -149,6 +149,8 @@
       width: 100%;
 
       .notification-items-container {
+        overflow-x: hidden;
+
         .notification-item:nth-child(1),
         .notification-item:nth-child(2),
         .notification-item:nth-child(3),
@@ -156,6 +158,10 @@
           display: flex;
         }
       }
+    }
+
+    .mark-all-read-container {
+      width: 100%;
     }
   }
 }

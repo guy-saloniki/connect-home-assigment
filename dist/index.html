@@ -120,9 +120,11 @@
                 />
               </div>
               <div>
-                <label for="content" cla>מלל התראה</label>
-                <textarea class="alert-content" dir="rtl"></textarea>
-                <div class="word-count-div"><span>0</span>/100</div>
+                <label for="textarea" cla>מלל התראה</label>
+                <textarea class="textarea" id="textarea" dir="rtl"></textarea>
+                <div class="letter-count-div">
+                  <span class="letter-count-span">0</span>/100
+                </div>
               </div>
 
               <input type="submit" value="שמירה" class="save-alert-btn" />
@@ -196,12 +198,12 @@
         <div class="notification-items-container"></div>
 
         <!-- Mark all as read -->
-        <div class="mark-all-read-container">
+        <!-- <div class="mark-all-read-container">
           <div class="load-more">
             <p>טען עוד</p>
           </div>
           <button class="mark-all-read-btn">סמן הכל כנקרא</button>
-        </div>
+        </div> -->
 
         <div class="no-more-notifications-container">
           <i class="fas fa-bell"></i>
@@ -213,6 +215,13 @@
       </div>
 
       <div class="gray-area"></div>
+
+      <div class="mark-all-read-container">
+        <div class="load-more">
+          <p>טען עוד</p>
+        </div>
+        <button class="mark-all-read-btn">סמן הכל כנקרא</button>
+      </div>
     </div>
 
     <script src="script.js"></script>

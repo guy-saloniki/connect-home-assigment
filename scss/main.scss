@@ -28,7 +28,7 @@ ul {
   position: relative;
 
   .header-container {
-    width: 92%;
+    width: 95%;
     height: 80px;
     background: #ffffff 0% 0% no-repeat padding-box;
     border: 1px solid #d0cdd4;
@@ -100,18 +100,11 @@ ul {
       .open-account {
         display: flex;
         align-items: center;
-        // justify-content: flex-start;
-        // text-align: center;
         gap: 6px;
-        // position: absolute;
-        // top: 13px;
-        // left: 800px;
-        // width: 150px;
-        // height: 40px;
         padding: 14px 25px;
         background: #fdeaef 0% 0% no-repeat padding-box;
         border-radius: 12px;
-        opacity: 1;
+        margin-bottom: 10px;
 
         h3 {
           text-align: center;
@@ -147,7 +140,7 @@ ul {
     right: 0;
     height: 100%;
     max-height: 100%;
-    width: 8%;
+    width: 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -320,7 +313,7 @@ ul {
             padding: 10px;
           }
 
-          .word-count-div {
+          .letter-count-div {
             position: absolute;
             top: 130px;
             left: 6px;
@@ -539,55 +532,56 @@ ul {
 
       .notification-item:nth-child(1),
       .notification-item:nth-child(2),
-      .notification-item:nth-child(3) {
+      .notification-item:nth-child(3),
+      .notification-item:nth-child(4) {
         display: flex;
       }
     }
 
-    .mark-all-read-container {
-      width: 100%;
-      height: 72px;
-      max-height: 72px;
-      background-color: #f5f5f5;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    // .mark-all-read-container {
+    //   width: 100%;
+    //   height: 72px;
+    //   max-height: 72px;
+    //   background-color: #f5f5f5;
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
 
-      .mark-all-read-btn {
-        border: none;
-        color: #fff;
-        background-color: #333;
-        border-radius: 8px;
-        padding: 15px 125px;
-        font-weight: bold;
-        font-size: 16px;
-        margin-left: 12px;
-        cursor: pointer;
-      }
+    //   .mark-all-read-btn {
+    //     border: none;
+    //     color: #fff;
+    //     background-color: #333;
+    //     border-radius: 8px;
+    //     padding: 15px 125px;
+    //     font-weight: bold;
+    //     font-size: 16px;
+    //     margin-left: 12px;
+    //     cursor: pointer;
+    //   }
 
-      .load-more {
-        position: absolute;
-        top: -32px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #fff;
-        box-shadow: 0px 6px 10px #00000029;
-        border-radius: 8px;
-        cursor: pointer;
+    //   .load-more {
+    //     position: absolute;
+    //     top: -32px;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     background-color: #fff;
+    //     box-shadow: 0px 6px 10px #00000029;
+    //     border-radius: 8px;
+    //     cursor: pointer;
 
-        p {
-          font-weight: bold;
-          padding: 6px 16px;
-        }
-      }
+    //     p {
+    //       font-weight: bold;
+    //       padding: 6px 16px;
+    //     }
+    //   }
 
-      .mark-all-read-btn:active {
-        transform: scale(0.98);
-      }
-    }
+    //   .mark-all-read-btn:active {
+    //     transform: scale(0.98);
+    //   }
+    // }
 
     .no-more-notifications-container {
       width: 300px;
@@ -620,6 +614,51 @@ ul {
           color: #383737;
         }
       }
+    }
+  }
+
+  .mark-all-read-container {
+    width: 25%;
+    height: 72px;
+    max-height: 72px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .mark-all-read-btn {
+      border: none;
+      color: #fff;
+      background-color: #333;
+      border-radius: 8px;
+      padding: 15px 125px;
+      font-weight: bold;
+      font-size: 16px;
+      margin-left: 12px;
+      cursor: pointer;
+    }
+
+    .load-more {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      box-shadow: 0px 6px 10px #00000029;
+      border-radius: 8px;
+      cursor: pointer;
+
+      p {
+        font-weight: bold;
+        padding: 6px 16px;
+      }
+    }
+
+    .mark-all-read-btn:active {
+      transform: scale(0.98);
     }
   }
 }

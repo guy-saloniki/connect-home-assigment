@@ -20,7 +20,7 @@ ul {
   overflow: hidden;
   position: relative; }
   .container .header-container {
-    width: 92%;
+    width: 95%;
     height: 80px;
     background: #ffffff 0% 0% no-repeat padding-box;
     border: 1px solid #d0cdd4; }
@@ -76,7 +76,7 @@ ul {
         padding: 14px 25px;
         background: #fdeaef 0% 0% no-repeat padding-box;
         border-radius: 12px;
-        opacity: 1; }
+        margin-bottom: 10px; }
         .container .header-container .main-nav .open-account h3 {
           text-align: center;
           font-family: 'Rubik', sans-serif;
@@ -101,7 +101,7 @@ ul {
     right: 0;
     height: 100%;
     max-height: 100%;
-    width: 8%;
+    width: 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-between; }
@@ -228,7 +228,7 @@ ul {
           border: 1px solid #a7a7a7;
           border-radius: 12px;
           padding: 10px; }
-        .container .modal-container .modal .modal-content .modal-form .word-count-div {
+        .container .modal-container .modal .modal-content .modal-form .letter-count-div {
           position: absolute;
           top: 130px;
           left: 6px;
@@ -385,43 +385,9 @@ ul {
           color: #a5a5a5; }
       .notifications-container .notifications .notification-items-container .notification-item:nth-child(1),
       .notifications-container .notifications .notification-items-container .notification-item:nth-child(2),
-      .notifications-container .notifications .notification-items-container .notification-item:nth-child(3) {
+      .notifications-container .notifications .notification-items-container .notification-item:nth-child(3),
+      .notifications-container .notifications .notification-items-container .notification-item:nth-child(4) {
         display: flex; }
-    .notifications-container .notifications .mark-all-read-container {
-      width: 100%;
-      height: 72px;
-      max-height: 72px;
-      background-color: #f5f5f5;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-      .notifications-container .notifications .mark-all-read-container .mark-all-read-btn {
-        border: none;
-        color: #fff;
-        background-color: #333;
-        border-radius: 8px;
-        padding: 15px 125px;
-        font-weight: bold;
-        font-size: 16px;
-        margin-left: 12px;
-        cursor: pointer; }
-      .notifications-container .notifications .mark-all-read-container .load-more {
-        position: absolute;
-        top: -32px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #fff;
-        box-shadow: 0px 6px 10px #00000029;
-        border-radius: 8px;
-        cursor: pointer; }
-        .notifications-container .notifications .mark-all-read-container .load-more p {
-          font-weight: bold;
-          padding: 6px 16px; }
-      .notifications-container .notifications .mark-all-read-container .mark-all-read-btn:active {
-        transform: scale(0.98); }
     .notifications-container .notifications .no-more-notifications-container {
       width: 300px;
       height: 120px;
@@ -445,6 +411,41 @@ ul {
         .notifications-container .notifications .no-more-notifications-container .no-more-notifications-content p,
         .notifications-container .notifications .no-more-notifications-container .no-more-notifications-content i {
           color: #383737; }
+  .notifications-container .mark-all-read-container {
+    width: 25%;
+    height: 72px;
+    max-height: 72px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .notifications-container .mark-all-read-container .mark-all-read-btn {
+      border: none;
+      color: #fff;
+      background-color: #333;
+      border-radius: 8px;
+      padding: 15px 125px;
+      font-weight: bold;
+      font-size: 16px;
+      margin-left: 12px;
+      cursor: pointer; }
+    .notifications-container .mark-all-read-container .load-more {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      box-shadow: 0px 6px 10px #00000029;
+      border-radius: 8px;
+      cursor: pointer; }
+      .notifications-container .mark-all-read-container .load-more p {
+        font-weight: bold;
+        padding: 6px 16px; }
+    .notifications-container .mark-all-read-container .mark-all-read-btn:active {
+      transform: scale(0.98); }
 
 @media (max-width: 375px) and (max-height: 812px) {
   .container {
@@ -543,7 +544,7 @@ ul {
           font-size: 20px; }
         .container .modal-container .modal .modal-content .modal-form input {
           height: 22px; }
-        .container .modal-container .modal .modal-content .modal-form .word-count-div {
+        .container .modal-container .modal .modal-content .modal-form .letter-count-div {
           top: 155px; }
     .container .mobile-nav {
       z-index: 1; }
@@ -551,11 +552,15 @@ ul {
     display: none; }
   .notifications-container .notifications {
     width: 100%; }
-    .notifications-container .notifications .notification-items-container .notification-item:nth-child(1),
-    .notifications-container .notifications .notification-items-container .notification-item:nth-child(2),
-    .notifications-container .notifications .notification-items-container .notification-item:nth-child(3),
-    .notifications-container .notifications .notification-items-container .notification-item:nth-child(4) {
-      display: flex; } }
+    .notifications-container .notifications .notification-items-container {
+      overflow-x: hidden; }
+      .notifications-container .notifications .notification-items-container .notification-item:nth-child(1),
+      .notifications-container .notifications .notification-items-container .notification-item:nth-child(2),
+      .notifications-container .notifications .notification-items-container .notification-item:nth-child(3),
+      .notifications-container .notifications .notification-items-container .notification-item:nth-child(4) {
+        display: flex; }
+  .notifications-container .mark-all-read-container {
+    width: 100%; } }
 
 @keyframes modalOpen {
   from {

@@ -35,13 +35,15 @@ const notificationSpanMobile = document.querySelector(
 );
 const mobileNav = document.querySelector('.mobile-nav');
 const forYourAttentionMobile = document.querySelector('.for-your-attention');
+const letterCountSpan = document.querySelector('.letter-count-span');
+const textarea = document.querySelector('textarea');
 
 // Add notification to notifications list
 const addNotification = (e) => {
   e.preventDefault();
 
   const title = document.querySelector('.alert-title').value;
-  const content = document.querySelector('.alert-content').value;
+  const content = document.querySelector('.textarea').value;
 
   if (title === '' || content === '') {
     alert('חובה למלא כותרת ותוכן התראה');
@@ -92,7 +94,11 @@ const loadUnreadNotifications = () => {
     markAllReadContainer.style.display = 'block';
     markAllReadBtn.style.display = 'block';
     noMoreNotificationsContainer.style.display = 'none';
-    loadMoreBtn.style.display = 'block';
+    if (unReadNotifications.length > 4) {
+      loadMoreBtn.style.display = 'block';
+    } else {
+      loadMoreBtn.style.display = 'none';
+    }
   }
 
   unReadNotifications.forEach((notification) => {
@@ -140,7 +146,9 @@ const loadReadNotifications = () => {
     noMoreNotificationsContainer.style.display = 'none';
   }
 
-  readNotifications.forEach((notification) => {
+  const sorted = sortNotificationsByDate(readNotifications);
+
+  sorted.forEach((notification) => {
     const div = document.createElement('div');
     const backgroundColor = !notification.read ? '#0D7DFF' : '#959595';
     div.classList.add('notification-item');
@@ -184,19 +192,18 @@ const updateNotificationToRead = (id) => {
 };
 
 // Load more notifications
-
 const loadMore = () => {
   let currentItem = 3;
 
   const notificationItems = document.querySelectorAll('.notification-item');
 
-  if (notificationItems.length >= 3) {
+  if (notificationItems.length >= 4) {
     for (let i = currentItem; i < notificationItems.length; i++) {
       notificationItems[i].style.display = 'flex';
     }
 
     loadMoreBtn.style.display = 'none';
-    markAllReadContainer.style.display = 'none';
+    markAllReadContainer.style.display = 'block';
   }
 };
 
@@ -239,7 +246,7 @@ closeModalBtn.addEventListener('click', () => {
 
   // Clear fields
   document.querySelector('.alert-title').value = '';
-  document.querySelector('.alert-content').value = '';
+  document.querySelector('.textarea').value = '';
 });
 
 // Save notification
@@ -254,6 +261,20 @@ notificationBtn.addEventListener('click', () => {
   loadUnreadNotifications();
 });
 
+// Count letters in textarea
+const countLetters = () => {
+  const content = textarea.value.trim();
+  const lettersLength = content.length;
+  if (lettersLength > 100) {
+    alert('הגעת למקסימום תווים');
+    return;
+  } else {
+    letterCountSpan.innerText = lettersLength;
+  }
+};
+
+textarea.addEventListener('input', countLetters);
+
 notificatiionBtnMobile.addEventListener('click', () => {
   notificationItemsContainer.innerHTML = '';
   mainContainer.style.display = 'none';
@@ -267,6 +288,26 @@ closeNotificationsBtn.addEventListener('click', () => {
   notificationsContainer.style.display = 'none';
   mainContainer.style.display = 'block';
 });
+
+// Sort notifications by date
+const sortNotificationsByDate = (notifications) => {
+  const sorted = notifications.sort((a, b) => {
+    const dateA = new Date(
+      a.date.replace(
+        /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/,
+        '$3-$2-$1T$4:$5'
+      )
+    );
+    const dateB = new Date(
+      b.date.replace(
+        /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/,
+        '$3-$2-$1T$4:$5'
+      )
+    );
+    return dateB - dateA;
+  });
+  return sorted;
+};
 
 // Get current date formatted
 const formattedDate = () => {
@@ -287,14 +328,6 @@ const formattedDate = () => {
 
 // Add notifications to local storage
 const addNotificationsToLocalStorage = async () => {
-  // // Load json data
-  // const res = await fetch('../notifications.json');
-  // const { data } = await res.json();
-
-  // // Save notifications in local storage
-  // const notifications = data[0].notifications;
-  // localStorage.setItem('notifications', JSON.stringify(notifications));
-
   // Check if notifications are already present in local storage
   const existingNotifications = localStorage.getItem('notifications');
 
@@ -305,7 +338,10 @@ const addNotificationsToLocalStorage = async () => {
 
     // Save notifications in local storage
     const notifications = data[0].notifications;
-    localStorage.setItem('notifications', JSON.stringify(notifications));
+
+    const sortedNotifications = sortNotificationsByDate(notifications);
+
+    localStorage.setItem('notifications', JSON.stringify(sortedNotifications));
   }
 };
 
